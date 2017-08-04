@@ -1,11 +1,9 @@
 body {
   margin: 40px;
+  width: 100%;
 }
 
-#calc {
 
-    width: 100%;
-  }
 
 .wrapper {
     display: grid;
@@ -13,7 +11,7 @@ body {
     grid-template-columns: 100px 100px 100px 100px;
     background-color: #fff;
     color: #444;
-    width: 30.5%;
+    width: 33%;
     margin: 0 auto;
   }
 
