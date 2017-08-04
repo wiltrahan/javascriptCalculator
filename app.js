@@ -7,11 +7,14 @@ $(document).ready(function() {
   total.text("0");
 
   $(".numbers").click(function() {
+    $(".operators").removeClass('activeOperator');
     number += $(this).text();
     total.text(number);
+    numberLength(number);
   });
 
   $(".operators").click(function() {
+    $(this).addClass('activeOperator');
     operator = $(this).text();
     secondNumber = number;
     number = "";
@@ -19,6 +22,7 @@ $(document).ready(function() {
   });
 
   $("#clear, #all_clear").click(function() {
+    $(".operators").removeClass('activeOperator');
     number = "";
     total.text("0");
     if ($(this).attr("id") === "all_clear") {
@@ -47,6 +51,23 @@ $(document).ready(function() {
     }
 
     total.text(number);
-    secondNumber = "";
+    $(".operators").removeClass('activeOperator');
+    totalLength(number);
   });
+
+  function numberLength(number) {
+    if (number.length > 10) {
+      number = "";
+      total.text("limit reached");
+    }
+  }
+
+  function totalLength(number) {
+    if (number.length >= 10 && number[1] === ".") {
+      number = parseFloat(number).toFixed(4).toString();
+      total.text(number);
+    } else if (number.length >= 10) {
+      total.text("limit reached");
+    }
+  }
 });
