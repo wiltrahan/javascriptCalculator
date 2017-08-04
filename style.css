@@ -24,6 +24,7 @@ body {
     grid-column: 1 / 5;
     grid-row: 1;
     text-align: right;
+    height: 50px;
   }
   .seven {
     grid-column: 1 ;
@@ -38,3 +39,7 @@ body {
     grid-row: 2;
   }
 
+  #equals {
+    grid-column: 1 / 5;
+
+  }
