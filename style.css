@@ -2,13 +2,21 @@ body {
   margin: 40px;
 }
 
+#calc {
+
+    width: 100%;
+  }
+
 .wrapper {
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 5px;
     grid-template-columns: 100px 100px 100px 100px;
     background-color: #fff;
     color: #444;
+    width: 30.5%;
+    margin: 0 auto;
   }
+
 
   .box {
     background-color: #444;
@@ -17,6 +25,7 @@ body {
     padding: 20px;
     font-size: 150%;
     text-align: center;
+
 
   }
   .total {
