@@ -4,6 +4,7 @@ $(document).ready(function() {
   var operator = "";
   var total = $("#totalWindow");
 
+
   total.text("0");
 
   $(".numbers").click(function() {
@@ -12,6 +13,7 @@ $(document).ready(function() {
     total.text(number);
     numberLength(number);
   });
+
 
   $(".operators").click(function() {
     $(this).addClass('activeOperator');
@@ -27,33 +29,64 @@ $(document).ready(function() {
     total.text("0");
     if ($(this).attr("id") === "all_clear") {
       secondNumber = "";
+      number = "";
     }
   });
 
-  $("#equals").click(function() {
-    switch (operator) {
-      case "+":
-        number = parseInt(secondNumber, 10) + parseInt(number, 10);
-        number = number.toString(10);
-        break;
-      case "-":
-        number = parseInt(secondNumber, 10) - parseInt(number, 10);
-        number = number.toString(10);
-        break;
-      case "/":
-        number = parseInt(secondNumber, 10) / parseInt(number, 10);
-        number = number.toString(10);
-        break;
-      case "*":
-        number = parseInt(secondNumber, 10) * parseInt(number, 10);
-        number = number.toString(10);
-        break;
-    }
+    $("#equals").click(function() {
+      switch (operator) {
+        case "+":
+          number = parseInt(secondNumber, 10) + parseInt(number, 10);
+          number = number.toString(10);
+          break;
+        case "-":
+          number = parseInt(secondNumber, 10) - parseInt(number, 10);
+          number = number.toString(10);
+          break;
+        case "/":
+          number = parseInt(secondNumber, 10) / parseInt(number, 10);
+          number = number.toString(10);
+          break;
+        case "*":
+          number = parseInt(secondNumber, 10) * parseInt(number, 10);
+          number = number.toString(10);
+          break;
+      }
 
-    total.text(number);
-    $(".operators").removeClass('activeOperator');
-    totalLength(number);
-  });
+      total.text(number);
+      $(".operators").removeClass('activeOperator');
+      totalLength(number);
+
+    });
+
+    // function eq(operator, temp) {
+    //   number = temp;
+    //   switch (operator) {
+    //     case "+":
+    //       number = parseInt(secondNumber, 10) + parseInt(number, 10);
+    //       number = number.toString(10);
+    //       break;
+    //     case "-":
+    //       number = parseInt(secondNumber, 10) - parseInt(number, 10);
+    //       number = number.toString(10);
+    //       break;
+    //     case "/":
+    //       number = parseInt(secondNumber, 10) / parseInt(number, 10);
+    //       number = number.toString(10);
+    //       break;
+    //     case "*":
+    //       number = parseInt(secondNumber, 10) * parseInt(number, 10);
+    //       number = number.toString(10);
+    //       break;
+    //   }
+    //   total.text(number);
+    //   $(".operators").removeClass('activeOperator');
+    //   totalLength(number);
+
+    // }
+
+
+
 
   function numberLength(number) {
     if (number.length > 10) {
